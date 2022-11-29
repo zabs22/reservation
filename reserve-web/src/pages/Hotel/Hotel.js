@@ -57,7 +57,7 @@ const Hotel = () => {
   };
   const handleClick = () => {
      if(true) {
-      navigate("/checkout");
+      navigate("/reserve");
     }
   };
 

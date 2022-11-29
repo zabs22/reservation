@@ -11,6 +11,7 @@ import List from "./pages/List/List";
 import Login from "./pages/Login/Login";
 import SignUp from "./pages/Login/SignUp";
 import OrderSummary from "./pages/BookingCheckout/OrderSummary";
+import Reserve from "./components/reserve/Reserve";
 
 function App() {
     return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/checkout" element={<OrderSummary/>}/>
           <Route path="/login" element={<Login/>}/>
           <Route path="/signUp" element={<SignUp/>}/>
+          <Route path="/reserve" element={<Reserve/>}/>
         </Routes>
       </BrowserRouter> 
     );
