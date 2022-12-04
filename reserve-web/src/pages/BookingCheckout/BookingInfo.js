@@ -1,11 +1,27 @@
-import * as React from 'react';
+import React, {useEffect,useState} from 'react';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
+import {useNavigate } from 'react-router-dom';
 
 const BookingInfo = () => {
+
+  const [auth,setauth]=useState('');
+  const [User,setUser]=useState('');
+  let navigate = useNavigate();
+
+  useEffect(()=>{
+    var auth = localStorage.getItem('Email');
+    var User = localStorage.getItem('User');
+if(auth===null){
+  navigate('/login');
+}
+    setauth(auth);
+    setUser(User); 
+  })
+
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>

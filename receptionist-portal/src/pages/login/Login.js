@@ -15,14 +15,50 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 const theme = createTheme();
 
 const Login = () => {
-   const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
-  };
+
+  let navigate = useNavigate();
+
+  const [user,setuser]=useState({Email:'',Password:''})
+
+  const handleChange=(e)=>{
+    setData({ ...user,[e.target.name]: e.target.value});
+  }
+
+  const submitForm=(e)=>{
+    e.preventDefault();
+   const sendData = {
+    Email:user.Email,
+    Password:user.Password
+    }
+  
+  
+  console.log(sendData)
+  
+  axios.post('http://localhost/api2/login_emp.php',sendData)
+  
+  .then((result)=>{
+    if(result.data.Status === '200'){
+      window.localStorage.setItem('Email', result.data.Email);
+      window.localStorage.setItem('Username', result.data.FirstName+ ''+result.data.LastName);
+    navigate('/');}
+    else{
+      alert('Invalid User');
+    }
+  })
+  
+  }
+
+
+
+
+  //  const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   const data = new FormData(event.currentTarget);
+  //   console.log({
+  //     email: data.get('email'),
+  //     password: data.get('password'),
+  //   });
+  // };
   return (
       
     <ThemeProvider theme={theme}>

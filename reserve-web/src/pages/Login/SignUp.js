@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, {useState} from "react";
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -12,17 +12,61 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import axios from "axios";
+import {useNavigate} from 'react-router-dom';
 const theme = createTheme();
  
 const SignUp = () => {
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        const data = new FormData(event.currentTarget);
-        console.log({
-          email: data.get('email'),
-          password: data.get('password'),
-        });
-      };
+const history = useNavigate()
+const [data, setdata]=useState({
+  Username:"",
+  Email:"",
+  Counrty:"",
+  Img:"",
+  City:"",
+  Phone:"",
+  Password:""
+})
+
+const handleChange=(e)=>{
+  setData({ ...data,[e.target.name]: e.target.value});
+}
+
+const submitForm=(e)=>{
+  e.preventDefault();
+ const sendData = {
+  Username:data.Username,
+  Email:data.Email,
+  Counrty:data.Country,
+  Img:data.Img,
+  City:data.City,
+  Phone:data.Phone,
+  Password:data.Password
+  }
+
+
+console.log(sendData)
+
+axios.post('http://localhost/api2/register.php',sendData)
+
+.then((result)=>{
+  if(result.data.Status == 'Invalid')
+  alart('Invalid User');
+  else{
+    navigate('/login')
+  }
+})
+
+}
+
+    // const handleSubmit = (event) => {
+    //     event.preventDefault();
+    //     const data = new FormData(event.currentTarget);
+    //     console.log({
+    //       Email: data.get('email'),
+    //       Password: data.get('password'),
+    //     });
+    //   };
 
     return (
         <ThemeProvider theme={theme}>
@@ -42,7 +86,7 @@ const SignUp = () => {
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
-          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+          <Box component="form" noValidate onSubmit={submitForm} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
                 <TextField
@@ -53,6 +97,7 @@ const SignUp = () => {
                   id="firstName"
                   label="First Name"
                   autoFocus
+                  onChange={handleChange} value={data.Username}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -73,6 +118,7 @@ const SignUp = () => {
                   label="Email Address"
                   name="email"
                   autoComplete="email"
+                  onChange={handleChange} value={data.Email}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -84,6 +130,7 @@ const SignUp = () => {
                   type="password"
                   id="password"
                   autoComplete="new-password"
+                  onChange={handleChange} value={data.Password}
                 />
               </Grid>
               <Grid item xs={12}>
