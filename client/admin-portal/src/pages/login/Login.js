@@ -1,6 +1,6 @@
 import React, { useState } from "react"
-//import axios from "axios";
-//import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 //import { AuthContext } from "../../context/AuthContext";
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
@@ -16,8 +16,41 @@ const theme = createTheme();
 
 const Login = () => {
 
-  const [userName, setuserName] = useState("");
-  const [password, setPassword] = useState("");
+    let navigate = useNavigate();
+  
+    const [user,setuser]=useState({Email:'',Password:''})
+  
+    const handleChange=(e)=>{
+      setuser({ ...user,[e.target.name]: e.target.value});
+    }
+  
+    const submitForm=(e)=>{
+      e.preventDefault();
+     const sendData = {
+      Email:user.Email,
+      Password:user.Password
+      }
+    
+    
+    console.log(sendData)
+    
+    axios.post('http://localhost/api2/login_clinet.php',sendData)
+    
+    .then((result)=>{
+      if(result.data.Status === '200'){
+        window.localStorage.setItem('Email', result.data.Email);
+        window.localStorage.setItem('Username', result.data.Username);
+      navigate('/');}
+      else{
+        alert('Invalid User');
+      }
+    })
+    
+    }
+  
+
+  // const [userName, setuserName] = useState("");
+  // const [password, setPassword] = useState("");
   
   return (
       
@@ -44,22 +77,20 @@ const Login = () => {
 
           {/* Form*/}
 
-          <Box component="form" noValidate sx={{ mt: 1 }}>
+          <Box component="form" onSubmit={submitForm} noValidate sx={{ mt: 1 }}>
 
             <TextField
               margin="normal"
               required
               fullWidth
-              id="username"
-              label="Username"
-              name="username"
-              autoComplete="current-username"
+              id="Email"
+              label="Email"
+              name="Email"
+              autoComplete="current-Email"
               autoFocus
-              error={userName.length === 0}
-              helperText={!userName.length ? 'UserName is required' : ''}
-              onChange={(e) => {
-                setuserName(e.target.value);
-            }}
+              error={user.Email.length === 0}
+              helperText={!user.Email.length ? 'Email is required' : ''}
+              onChange={handleChange} value={user.Email}
             />
             <TextField
               margin="normal"
@@ -70,11 +101,9 @@ const Login = () => {
               type="password"
               id="password"
               autoComplete="current-password"
-              error={password.length === 0}
-              helperText={!password.length ? 'Password is required' : ''}
-              onChange={(e) => {
-                setPassword(e.target.value);
-              }}
+              error={user.Password.length === 0}
+              helperText={!user.Password.length ? 'Password is required' : ''}
+              onChange={handleChange} value={user.Password}
             />
 
             {/* Sign In Button*/}
