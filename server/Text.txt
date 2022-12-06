@@ -1,1 +1,2 @@
 This is for server development.
+The files need to be saved to C:\xampp\htdocs
