@@ -26,6 +26,7 @@ const Login = () => {
 
   const submitForm=(e)=>{
     e.preventDefault();
+
    const sendData = {
     Email:user.Email,
     Password:user.Password
@@ -81,22 +82,26 @@ const Login = () => {
               margin="normal"
               required
               fullWidth
-              id="email"
+              id="Email"
               label="Email Address"
-              name="email"
-              autoComplete="email"
+              name="Email"
+              autoComplete="Email"
               autoFocus
+              error={user.Email.length === 0}
+              helperText={!user.Email.length ? 'Email is required' : ''}
               onChange={handleChange} value={user.Email}
             />
             <TextField
               margin="normal"
               required
               fullWidth
-              name="password"
+              name="Password"
               label="Password"
               type="password"
-              id="password"
+              id="Password"
               autoComplete="current-password"
+              error={user.Password.length === 0}
+              helperText={!user.Password.length ? 'Password is required' : ''}
               onChange={handleChange} value={user.Password}
             />
             <Button

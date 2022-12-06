@@ -18,7 +18,7 @@ const Login = () => {
 
     let navigate = useNavigate();
   
-    const [user,setuser]=useState({Email:'',Password:''})
+    const [user,setuser] = useState({Email:'',Password:''})
   
     const handleChange=(e)=>{
       setuser({ ...user,[e.target.name]: e.target.value});
@@ -26,6 +26,7 @@ const Login = () => {
   
     const submitForm=(e)=>{
       e.preventDefault();
+      
      const sendData = {
       Email:user.Email,
       Password:user.Password
@@ -96,10 +97,10 @@ const Login = () => {
               margin="normal"
               required
               fullWidth
-              name="password"
+              name="Password"
               label="Password"
               type="password"
-              id="password"
+              id="Password"
               autoComplete="current-password"
               error={user.Password.length === 0}
               helperText={!user.Password.length ? 'Password is required' : ''}
