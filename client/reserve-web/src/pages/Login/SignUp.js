@@ -5,8 +5,6 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
@@ -18,11 +16,11 @@ const theme = createTheme();
  
 const SignUp = () => {
 
-  const navigate = useNavigate()
-const [data, setdata]=useState({
+  const navigate = useNavigate();
+  const [data, setdata]=useState({
   Username:"",
   Email:"",
-  Counrty:"",
+  Country:"",
   Img:"",
   City:"",
   Phone:"",
@@ -35,10 +33,11 @@ const handleChange=(e)=>{
 
 const submitForm=(e)=>{
   e.preventDefault();
+
  const sendData = {
   Username:data.Username,
   Email:data.Email,
-  Counrty:data.Country,
+  Country:data.Country,
   Img:data.Img,
   City:data.City,
   Phone:data.Phone,
@@ -51,8 +50,8 @@ console.log(sendData)
 axios.post('http://localhost/api2/register.php',sendData)
 
 .then((result)=>{
-  if(result.data.Status == 'Invalid') {
-  alart('Invalid User');
+  if(result.data.Status === 'Invalid') {
+  alert('Invalid User');
   }
   else {
     navigate('/login');
@@ -85,61 +84,87 @@ axios.post('http://localhost/api2/register.php',sendData)
           <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
             <LockOutlinedIcon />
           </Avatar>
+
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
+
           <Box component="form" noValidate onSubmit={submitForm} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
+
+              <Grid item xs={12}>
                 <TextField
-                  autoComplete="given-name"
-                  name="firstName"
+                  autoComplete="username"
+                  name="Username"
                   required
                   fullWidth
-                  id="firstName"
-                  label="First Name"
+                  id="Username"
+                  label="Username"
                   autoFocus
                 />
               </Grid>
+
               <Grid item xs={12} sm={6}>
                 <TextField
                   required
                   fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
-                  autoComplete="family-name"
+                  id="Country"
+                  label="Country"
+                  name="Country"
+                  autoComplete="Country-name"
                 />
               </Grid>
+
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  autoComplete="City"
+                  name="City"
+                  required
+                  fullWidth
+                  id="City"
+                  label="City"
+                  autoFocus
+                />
+              </Grid>
+
               <Grid item xs={12}>
                 <TextField
                   required
                   fullWidth
-                  id="email"
+                  id="Email"
                   label="Email Address"
-                  name="email"
-                  autoComplete="email"
-                  onChange={handleChange} value={data.Username}
+                  name="Email"
+                  autoComplete="Email"
+                  onChange={handleChange} value={data.Email}
                 />
               </Grid>
+
               <Grid item xs={12}>
                 <TextField
                   required
                   fullWidth
-                  name="password"
+                  id="Phone"
+                  label="Phone Number"
+                  name="Phone"
+                  autoComplete="Phone"
+                  type="number"
+                  onChange={handleChange} value={data.Phone}
+                />
+              </Grid>
+
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  fullWidth
+                  name="Password"
                   label="Password"
                   type="password"
-                  id="password"
+                  id="Password"
                   autoComplete="new-password"
                   onChange={handleChange} value={data.Password}
                 />
               </Grid>
-              <Grid item xs={12}>
-                <FormControlLabel
-                  control={<Checkbox value="allowExtraEmails" color="primary" />}
-                  label="I want to receive inspiration, marketing promotions and updates via email."
-                />
-              </Grid>
+              
             </Grid>
             <Button
               type="submit"
