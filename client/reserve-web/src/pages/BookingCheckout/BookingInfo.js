@@ -1,4 +1,4 @@
-import React, {useEffect,useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
@@ -12,15 +12,15 @@ const BookingInfo = () => {
   const [User,setUser]=useState('');
   let navigate = useNavigate();
 
-  useEffect(()=>{
-    var auth = localStorage.getItem('Email');
-    var User = localStorage.getItem('User');
-if(auth===null){
-  navigate('/login');
-}
-    setauth(auth);
-    setUser(User); 
-  })
+   useEffect(()=>{
+     var auth = localStorage.getItem('Email');
+     var User = localStorage.getItem('User');
+     if(auth===null){
+   navigate('/login');
+ }
+     setauth(auth);
+     setUser(User); 
+   })
 
   return (
     <React.Fragment>
