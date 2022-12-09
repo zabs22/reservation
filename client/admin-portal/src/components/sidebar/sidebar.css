@@ -31,9 +31,9 @@
           margin-top: 25px;
           margin-bottom: 5px;
         }
-  
+
         .ul .li {
-          display: inline-block;
+          display: flex;
           align-items: center;
           padding: 5px;
           cursor: pointer;

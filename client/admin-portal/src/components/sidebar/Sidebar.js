@@ -24,11 +24,18 @@ const Sidebar = () => {
           <Link to="/users" style={{ textDecoration: "none" }}>
             <li>
               <PersonOutlineIcon className="icon" />
-              <span>All Users</span>
+              <span>All Guests</span>
             </li>
           </Link>
 
-          <Link to="/bookings" style={{ textDecoration: "none" }}>
+          <Link to="/users" style={{ textDecoration: "none" }}>
+            <li>
+              <PersonOutlineIcon className="icon" />
+              <span>All Managers</span>
+            </li>
+          </Link>
+
+          <Link to="/bookings" style={{ textDecoration: "none", alignItems: 'center' }}>
             <li>
               <StoreIcon className="icon" />
               <span>All Bookings</span>

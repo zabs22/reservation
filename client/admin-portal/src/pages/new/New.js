@@ -3,8 +3,13 @@ import "./new.css";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined";
+import TextField from '@mui/material/TextField';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 
-const New = ({ inputs, title }) => {
+import Grid from '@mui/material/Grid';
+
+const New = () => {
     const [file, setFile] = useState("");
 
   return (
@@ -13,7 +18,7 @@ const New = ({ inputs, title }) => {
       <div className="newContainer">
         <Navbar />
         <div className="top">
-          <h1>{title}</h1>
+          <h1>Add here</h1>
         </div>
         <div className="bottom">
           <div className="left">
@@ -40,13 +45,67 @@ const New = ({ inputs, title }) => {
                 />
               </div>
 
-              {inputs.map((input) => (
-                <div className="formInput" key={input.id}>
-                  <label>{input.label}</label>
-                  <input type={input.type} placeholder={input.placeholder} />
-                </div>
-              ))}
-              <button>Send</button>
+              <Box
+                sx={{
+                  marginTop: 4,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                }}
+        >
+        
+          <Box component="form" noValidate sx={{ mt: 1 }}>
+          <Grid container spacing={2}>
+
+            <Grid item xs={12}>
+              <TextField
+                margin="normal"
+                required
+                id="Email"
+                label="Email"
+                name="Email"
+                autoComplete="current-Email"
+                autoFocus
+              />
+              </Grid>
+
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  margin="normal"
+                  required
+                  fullWidth
+                  name="Password"
+                  label="Password"
+                  type="password"
+                  id="Password"
+                />
+              </Grid>
+
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  autoComplete="City"
+                  name="City"
+                  required
+                  fullWidth
+                  id="City"
+                  label="City"
+                  autoFocus
+                />
+              </Grid>
+
+            {/* Sign In Button*/}
+
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              sx={{ mt: 3, mb: 2 }}
+            >
+              Send
+            </Button>
+            </Grid>
+          </Box>
+          </Box>
             </form>
           </div>
         </div>
