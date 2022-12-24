@@ -32,7 +32,7 @@
   }
   
   .hotelAddress {
-    font-size: 12px;
+    font-size: 16px;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -76,7 +76,7 @@
   }
   
   .hotelDesc {
-    font-size: 14px;
+    font-size: 18px;
     margin-top: 20px;
   }
   
@@ -90,11 +90,11 @@
   }
   
   .hotelDetailsPrice > h1 {
-    font-size: 18px;
+    font-size: 20px;
     color: #555;
   }
   .hotelDetailsPrice > span {
-    font-size: 14px;
+    font-size: 16px;
   }
   .hotelDetailsPrice > h2 {
     font-weight: 300;
@@ -145,7 +145,7 @@
   
   .arrow{
     margin: 20px;
-    font-size: 50px;
+    font-size: 52px;
     color: lightgray;
     cursor: pointer;
   }

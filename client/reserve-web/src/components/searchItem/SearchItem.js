@@ -21,9 +21,6 @@ const SearchItem = () => {
           Entire studio • 1 bathroom • 21m² 1 full bed
         </span>
         <span className="siCancelOp">Free cancellation </span>
-        <span className="siCancelOpSubtitle">
-          You can cancel later, so lock in this great price today!
-        </span>
       </div>
       <div className="siDetails">
         <div className="siRating">
@@ -31,7 +28,7 @@ const SearchItem = () => {
           <button>8.9</button>
         </div>
         <div className="siDetailTexts">
-          <span className="siPrice">$112</span>
+          <span className="siPrice">ETB 112</span>
           <span className="siTaxOp">Includes taxes and fees</span>
           <Link to={`hotels`}>
             <button className="siCheckButton">See availability</button>

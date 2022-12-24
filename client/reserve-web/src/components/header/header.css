@@ -12,7 +12,7 @@
   margin: 20px 0px 100px 0px;
 }
 
-.headerContainer.listMode {
+.headerContainer .listMode {
   margin: 20px 0px 0px 0px;
 }
 
@@ -41,7 +41,7 @@
 .headerBtn {
   background-color: #0071c2;
   color: white;
-  font-weight: 500;
+  font-weight: 700;
   border: none;
   padding: 10px;
   cursor: pointer;
@@ -63,23 +63,27 @@
 }
 
 .headerIcon {
-  color: lightgray;
+  color: gray;
 }
 
 .headerSearchItem {
   display: flex;
   align-items: center;
   gap: 10px;
+  
 }
 
 .headerSearchInput {
   border: none;
   outline: none;
+  font-size: 17px;
+  color: black;
 }
 
 .headerSearchText {
-  color: lightgray;
+  color: black;
   cursor: pointer;
+  font-size: 17px;
 }
 
 .date {

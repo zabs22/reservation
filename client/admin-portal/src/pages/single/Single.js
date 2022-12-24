@@ -1,4 +1,6 @@
 import React from 'react'
+
+import Button from "@mui/material/Button"
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 //import List from "../../components/table/Table";
@@ -12,7 +14,12 @@ const Single = () => {
         <Navbar />
         <div className="top">
           <div className="left">
-            <div className="editButton">Edit</div>
+            <div className="editButton">
+            <Button 
+              variant="contained"
+              sx={{ mt: 3, mb: 3, mr: 2 }}
+              >Edit</Button>
+            </div>
             <h1 className="title">Information</h1>
             <div className="item">
               <img

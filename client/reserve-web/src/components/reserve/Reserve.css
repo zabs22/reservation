@@ -38,25 +38,28 @@
   
   .rTitle {
     font-weight: 500;
+    font-size: 18px;
   }
   
   .rDesc {
     font-weight: 300;
+    font-size: 16px;
   }
   
   .rMax {
-    font-size: 12px;
+    font-size: 18px;
   }
   
   .rPrice {
     font-weight: 500;
+    font-size: 24px;
   }
   
   .rSelectRooms{
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
-    font-size: 8px;
+    font-size: 14px;
     color: gray;
   }
   

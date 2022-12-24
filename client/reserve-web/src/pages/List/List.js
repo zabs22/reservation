@@ -7,7 +7,6 @@ import { useLocation } from "react-router-dom";
 
 import "./List.css";
 import Navbar from "../../components/navbar/Navbar";
-import Header from "../../components/header/Header";
 
 import SearchItem from "../../components/searchItem/SearchItem";
 
@@ -21,7 +20,6 @@ const List = () => {
   return (
     <div>
       <Navbar />
-      <Header type="list" />
       <div className="listContainer">
         <div className="listWrapper">
           <div className="listSearch">

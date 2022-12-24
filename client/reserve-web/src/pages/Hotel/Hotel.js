@@ -2,9 +2,6 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Navbar from "../../components/navbar/Navbar";
-import Header from "../../components/header/Header";
-import MailList from "../../components/mailList/MailList";
-import Footer from "../../components/footer/Footer";
 
 import ArrowBackIcon from "@mui/icons-material/ArrowBack"
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward"
@@ -63,8 +60,7 @@ const Hotel = () => {
 
   return (
     <div>
-      <Navbar />
-      <Header type="list" />
+      <Navbar/>
       <div className="hotelContainer">
         {open && (
           <div className="slider">
@@ -139,8 +135,7 @@ const Hotel = () => {
             </div>
           </div>
         </div>
-        <MailList />
-        <Footer />
+        {/* Map */}
       </div>
     </div>
   );

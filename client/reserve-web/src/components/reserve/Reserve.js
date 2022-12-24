@@ -25,9 +25,9 @@ const Reserve = ({setOpen}) => {
                         <div className="rTitle">Our Rooms</div>
                         <div className="rDesc">Description</div>
                         <div className="rMax">
-                        Max people: <b>120</b>
+                        Max people: <b>2</b>
                         </div>
-                        <div className="rPrice">$130</div>
+                        <div className="rPrice">ETB 130</div>
                     </div>
                     <div className="rSelectRooms">
                         <div className="room">
