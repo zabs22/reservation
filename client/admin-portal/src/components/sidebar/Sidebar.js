@@ -2,9 +2,7 @@ import React from 'react'
 import "./sidebar.css";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
-import CreditCardIcon from "@mui/icons-material/CreditCard";
 import StoreIcon from "@mui/icons-material/Store";
-import SettingsApplicationsIcon from "@mui/icons-material/SettingsApplications";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import { Link } from "react-router-dom";
@@ -28,7 +26,7 @@ const Sidebar = () => {
             </li>
           </Link>
 
-          <Link to="/users" style={{ textDecoration: "none" }}>
+          <Link to="/managers" style={{ textDecoration: "none" }}>
             <li>
               <PersonOutlineIcon className="icon" />
               <span>All Managers</span>
@@ -38,22 +36,9 @@ const Sidebar = () => {
           <Link to="/bookings" style={{ textDecoration: "none", alignItems: 'center' }}>
             <li>
               <StoreIcon className="icon" />
-              <span>All Bookings</span>
+              <span>Bookings</span>
             </li>
           </Link>
-          
-          <Link to="/orders" style={{ textDecoration: "none" }}>
-            <li>
-              <CreditCardIcon className="icon" />
-              <span>Orders</span>
-            </li>
-          </Link>
-          
-          <li>
-            <SettingsApplicationsIcon className="icon" />
-            <span>Settings</span>
-          </li>
-          <p className="title">USER</p>
 
           <Link to="/profile" style={{ textDecoration: "none" }}>
           <li>

@@ -2,7 +2,8 @@ import React from 'react'
 import "./list.css"
 import Sidebar from "../../components/sidebar/Sidebar"
 import Navbar from "../../components/navbar/Navbar"
-import Datatable from "../../components/datatable/Datatable"
+//import Datatable from "../../components/datatable/Datatable"
+import GuestList from "../../components/GuestList/GuestList"
 
 const List = () => {
   return (
@@ -10,7 +11,8 @@ const List = () => {
       <Sidebar/>
       <div className="listContainer">
         <Navbar/>
-        <Datatable/>
+        {/*<Datatable/>*/}
+        <GuestList />
       </div>
     </div>
   )
