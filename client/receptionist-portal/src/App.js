@@ -7,7 +7,12 @@ import List from "./pages/list/List";
 import Single from "./pages/single/Single";
 import New from "./pages/new/New";
 
-import { userInputs, productInputs } from "./formSource";
+import { userInputs } from "./formSource";
+import Bookings from "./pages/Booking/Bookings";
+import NewBooking from "./pages/Booking/NewBooking";
+import HotelList from "./pages/Hotel/HotelList";
+import NewHotel from "./pages/Hotel/NewHotel";
+
 function App() {
   return (
     <BrowserRouter>
@@ -20,15 +25,25 @@ function App() {
               <Route path=":userId" element={<Single />} />
               <Route
                 path="new"
-                element={<New inputs={userInputs} title="Add New User" />}
+                element={<New inputs={userInputs} title="Add New Guest" />}
               />
             </Route>
+
+              <Route path="hotels">
+                <Route index element={<HotelList/>} />
+                <Route path=":" element={<Single />} />
+                <Route
+                path="newHotel"
+                element={<NewHotel title="Add New Hotel" />}
+              />
+            </Route>
+              
             <Route path="bookings">
-              <Route index element={<List />} />
+              <Route index element={<Bookings />} />
               <Route path=":bookingId" element={<Single />} />
               <Route
-                path="new"
-                element={<New inputs={productInputs} title="Add New Booking" />}
+                path="newBooking"
+                element={<NewBooking title="Add New Booking" />}
               />
             </Route>
           </Route>
