@@ -11,16 +11,16 @@ const SearchItem = () => {
         className="siImg"
       />
       <div className="siDesc">
-        <h1 className="siTitle">Tower Street Apartments</h1>
+        <h1 className="siTitle">Addis Guest House</h1>
         <span className="siDistance">500m from center</span>
-        <span className="siTaxiOp">Free airport taxi</span>
+        <span className="siTaxiOp">Close to airport</span>
         <span className="siSubtitle">
           Studio Apartment with Air conditioning
         </span>
         <span className="siFeatures">
           Entire studio • 1 bathroom • 21m² 1 full bed
         </span>
-        <span className="siCancelOp">Free cancellation </span>
+        <span className="siCancelOp">Variety of Rooms</span>
       </div>
       <div className="siDetails">
         <div className="siRating">

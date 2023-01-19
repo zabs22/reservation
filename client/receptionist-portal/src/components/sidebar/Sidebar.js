@@ -13,10 +13,12 @@ const Sidebar = () => {
       <div className="center">
         <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
           <p className="title">BOOKINGS</p>
-          <li>
-            <DashboardIcon className="icon" />
-            <span>Dashboard</span>
-          </li>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <li>
+              <DashboardIcon className="icon" />
+              <span>Dashboard</span>
+            </li>
+          </Link>
           <p className="title">LISTS</p>
           <Link to="/users" style={{ textDecoration: "none" }}>
             <li>

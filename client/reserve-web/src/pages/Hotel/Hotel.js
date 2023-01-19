@@ -9,6 +9,7 @@ import CloseIcon from "@mui/icons-material/Close"
 import PlaceIcon from "@mui/icons-material/Place";
 
 import "./Hotel.css";
+import MapPage from "../../components/map/MapPage";
 
 const Hotel = () => {
   const [slideNumber, setSlideNumber] = useState(0);
@@ -83,16 +84,16 @@ const Hotel = () => {
         )}
         <div className="hotelWrapper">
             <button className="bookNow" onClick={handleClick}>Reserve or Book Now!</button>
-          <h1 className="hotelTitle">Tower Street Apartments</h1>
+          <h1 className="hotelTitle">Addis Guest House</h1>
           <div className="hotelAddress">
             <PlaceIcon />
-            <span>Elton St 125 New york</span>
+            <span>Addis Ababa, Ethiopia</span>
           </div>
           <span className="hotelDistance">
-            Excellent location – 500m from center
+            Excellent location – 500m 
           </span>
           <span className="hotelPriceHighlight">
-            Book a stay over $114 at this property and get a free airport taxi
+            Book a stay over ETB 112 at this hotel and enjoy your stay
           </span>
           <div className="hotelImages">
             {photos.map((photo, i) => (
@@ -106,36 +107,67 @@ const Hotel = () => {
               </div>
             ))}
           </div>
+
           <div className="hotelDetails">
             <div className="hotelDetailsTexts">
               <h1 className="hotelTitle">Stay in the heart of City</h1>
               <p className="hotelDesc">
-                Located a 5-minute walk from St. Florian's Gate in Krakow, Tower
-                Street Apartments has accommodations with air conditioning and
-                free WiFi. The units come with hardwood floors and feature a
-                fully equipped kitchenette with a microwave, a flat-screen TV,
-                and a private bathroom with shower and a hairdryer. A fridge is
-                also offered, as well as an electric tea pot and a coffee
-                machine. Popular points of interest near the apartment include
-                Cloth Hall, Main Market Square and Town Hall Tower. The nearest
-                airport is John Paul II International Kraków Balice, 16.1 km
-                from Tower Street Apartments, and the property offers a paid
-                airport shuttle service.
+              A great choice for a stay in Addis Ababa, Addis Guest house offers a free airport shuttle (available 24 hours). 
+              Guests can indulge in deep-tissue massages or manicures and pedicures, and Degeman and Arada Soho, 
+              one of 2 restaurants, serves international cuisine and is open for breakfast, lunch and dinner. 
+              Other highlights at this upmarket hotel include 2 bars/lounges, an indoor pool and a health club. 
+              Fellow travellers say good things about the helpful staff and WiFi.
               </p>
+              
             </div>
+
             <div className="hotelDetailsPrice">
               <h1>Perfect for a 9-night stay!</h1>
               <span>
-                Located in the real heart of Krakow, this property has an
-                excellent location score of 9.8!
+                Located in the real heart of Krakow, this hotel has an
+                excellent rating score of 9.8!
               </span>
               <h2>
-                <b>$945</b> (9 nights)
+                <b>ETB 945</b> (9 nights)
               </h2>
+              <button onClick={handleClick}>Reserve or Book Now!</button>
             </div>
           </div>
+
+         {/* Map */}
+         <h2>Room Types</h2> 
+          <div className="roomTypes">
+              {/* Card for rooms */}
+            <div className="projcard-container">
+              <div className="projcard projcard-blue">
+                <div className="projcard-innerbox">
+                  <img className="projcard-img" alt="project" src="https://images.trvl-media.com/hotels/16000000/15170000/15163700/15163659/670976a1.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium" />
+                  <div className="projcard-textbox">
+                    <div className="projcard-title">Standard Room</div>
+                    <div className="projcard-subtitle">Our Standard Room has:</div>
+                    <div className="projcard-bar"></div>
+                    <div className="projcard-description">
+              one of 2 restaurants, serves international cuisine and is open for breakfast, lunch and dinner. 
+              Other highlights at this upmarket hotel include 2 bars/lounges, an indoor pool and a health club. 
+              WiFi.
+                    </div>
+                    <div className="projcard-tagbox">
+                      <button className="bookNow">Reserve</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Map on the right */}
+            <div className="maps">
+        <MapPage />
+        </div>
+         </div>   
         </div>
         {/* Map */}
+
+        
       </div>
     </div>
   );

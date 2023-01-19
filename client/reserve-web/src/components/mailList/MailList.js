@@ -5,11 +5,8 @@ const MailList = () => {
   return (
     <div className="mail">
       <h1 className="mailTitle">Save time, save money!</h1>
-      <span className="mailDesc">Sign up and we'll send the best deals to you</span>
-      <div className="mailInputContainer">
-        <input type="text" placeholder="Your Email" />
-        <button>Subscribe</button>
-      </div>
+      <span className="mailDesc">Book hotels from our variety</span>
+        <h4>Hotel Booking</h4><h3>2023</h3>
     </div>
   )
 }

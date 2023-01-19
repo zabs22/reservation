@@ -21,7 +21,7 @@ const columns = [
       field: 'checkIn',
       headerName: 'Check In Date',
       width: 160,
-      editable: false,
+      editable: true,
     },
     {
       field: 'checkOut',
